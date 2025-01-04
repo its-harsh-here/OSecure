@@ -1,0 +1,19 @@
+Write a c program which monitors the health of a webserver continuously by analyzing its log files and reports any malicious activity if so or tells if everything is perfect. 
+
+
+host intrusion detection system
+
+
+1. Essential Linux commands
+2. How a web server is installed
+3. Popular web servers
+
+4. Security loop holes in a given web server
+5. Linux os with most web servers along with version, stable/unstable
+
+
+6. Write a c code to check if os is secure
+
+
+Write a c program which displays the anomalies of the host and the web server with respect to security.
+

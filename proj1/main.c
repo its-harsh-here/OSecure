@@ -32,40 +32,11 @@ int main(int argc, char *argv[])
         return 1;
     }
     char *ip = argv[0]; // User IP
-    char rone[SIZE], rtwo[SIZE], rthree[SIZE]; // Result of 1st, 2nd and 3rd test cases   
+    char result[SIZE];
     printf("Checking system security...\n\n");
     int c = 0, i = 0;
     system("w");
-    runcmd("hostname --ip-address",rone, SIZE);
-    runcmd("sudo -n true", rtwo, SIZE);
-    runcmd("grep 'PermitRootLogin' /etc/ssh/sshd_config",rthree, SIZE);
-    printf("\n\tTest Cases: ");
-    if (uip(ip,rone))
-    {
-        printf("\n\t%d Unauthorized IP address logged in!\n", ++c);
-        i++;
-    }
-    else 
-        printf("\n\t%d Authorized IP address logged in!\n", ++c);
-
-
-    if (pswsudo(rtwo) == 0)
-    {
-        printf("\t%d Passwordless sudo is enabled\n", ++c);
-        i++;
-    }
-    else
-        printf("\t%d Passwordless sudo is disabled!\n", ++c);
-    if (rootlogin(rthree))
-    {
-        printf("\t%d SSH Root Login is enabled!\n\n", ++c);
-        i++;
-    }
-    else
-        printf("\t%d SSH Root Login is disabled!\n\n", ++c);
-    printf("Result: ");
-    i ? printf("System is Insecure with %d vulnerabilities!\n", i) : printf("System is Secured!\n");
-    return 0;
+    runcmd("nmap -p 21", argv[0], result, SIZE);
 }
 
 void runcmd(char* F, char* output, int s)
@@ -76,22 +47,9 @@ void runcmd(char* F, char* output, int s)
     pclose(cmd);
 }
 
-int uip(char* ip, char* result)
+int open(char* result)
 {
-    if(strstr(result, ip) == 0)
+    if(strstr(result, open) == 0))
         return 0;
     return 1;
-}
-
-int pswsudo(char* result)
-{
-    return strcmp(result, "sudo: a password is required");
-}
-
-int rootlogin(char* result)
-{
-    int r = 0;
-    if (strstr(result, "prohibit-password"))
-        r++;
-    return r;
 }

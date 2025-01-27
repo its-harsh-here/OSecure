@@ -1,0 +1,43 @@
+***
+Format:
+{
+  Port_No | Service Name | Transport Protocol:
+  - What the port does.....
+  - What happens when this port is open(Vulnerability)
+  - How to close this port
+}
+
+NOTE:
+- Please arrange the port in ascending order of port number!!!
+- Use multiple reputed sources and write it in your own words
+- Please paste link of all sources used in research under bibliography at the bottom of the file!
+
+***
+
+Contributors:
+First 12 ports (<Enter starting, Ending port here>) : Sanjana
+Next 12 ports (<Enter starting, Ending port here>) : Gautam
+Next 13 ports (<Enter starting, Ending port here>) : Saksham
+Next 13 ports (<Enter starting, Ending port here>) : Yash
+
+
+List of ports checked by our code:
+
+<Start writing here>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bibliography: 
+- https://www.geeksforgeeks.org/50-common-ports-you-should-know/
+
+

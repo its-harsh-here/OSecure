@@ -23,33 +23,54 @@ Future Add-ons:
 #define SIZE 1000
 
 void runcmd(char *, char *, int);
+int test(char* result);
+
+int ports[] = {}; // Enter all port numbers
 
 int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        printf("Invalid Input!\n Please try again with \"./main <IP Address>\"\n");
+        printf("Invalid Input! Please try again with \"./main <IP Address>\"\n");
         return 1;
     }
-    char *ip = argv[0]; // User IP
-    char result[SIZE];
-    printf("Checking system security...\n\n");
-    int c = 0, i = 0;
-    system("w");
-    runcmd("nmap -p 21", argv[0], result, SIZE);
+
+    int pc = 0;
+    char *ip = argv[1]; 
+    char result[SIZE] = "";
+    for(int i = 0, t = sizeof(ports) / sizeof(int); i < t; i++)
+    {
+        char cmd[100];  
+        sprintf(cmd, "nmap -p %d %s", ports[i], ip);  
+        runcmd(cmd, result, SIZE);  
+        if(test(result))
+        {
+            printf("Port %d is open\n", ports[i]);
+            pc++;            
+        }
+        memset(result, 0, SIZE);
+    }
+    printf("\nTotal Number of Open Ports: %d\n", pc);
+    return 0;
 }
 
 void runcmd(char* F, char* output, int s)
 {
     FILE* cmd = popen(F, "r");
+    if (cmd == NULL) 
+    {
+        perror("popen failed");
+        return;
+    }
     char buffer[100];   
-    strcat(output, buffer);
+    while (fgets(buffer, sizeof(buffer), cmd) != NULL)
+        strncat(output, buffer, s - strlen(output) - 1); 
     pclose(cmd);
 }
 
-int open(char* result)
+int test(char* result)
 {
-    if(strstr(result, open) == 0))
-        return 0;
-    return 1;
+    if (strstr(result, "open"))
+        return 1;
+    return 0;
 }

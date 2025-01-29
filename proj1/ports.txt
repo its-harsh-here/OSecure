@@ -24,6 +24,10 @@ Next 13 ports (<Enter starting, Ending port here>) : Yash
 List of ports checked by our code:
 
 <Start writing here>
+Port 5900 | RFB/VNC Server | TCP, UDP | Vulnerable :
+-This port  is necessary for VNC functionality, enabling remote control of a computer's desktop environment.
+-If left open without proper security measures it poses significant risks such as Remote Access, Brute Force Attacks, Unencrypted Traffic and Exploiting Weak Configurations
+-Close the port through a firewall(Linux : use iptables or ufw to block incoming traffic, Windows : block port 5900 through the Windows Firewall), disable the VNC service if it’s unnecessary, or enhance security by using encryption or tunneling. Always ensure that VNC access is protected by a strong password and ideally restricted to trusted IP addresses.
 
 
 

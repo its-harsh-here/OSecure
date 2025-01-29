@@ -32,6 +32,10 @@ Port 5900 | RFB/VNC Server | TCP, UDP | Vulnerable :
 
 
 
+Non Vulerable ports: 
+- 
+
+
 
 
 

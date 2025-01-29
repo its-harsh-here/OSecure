@@ -40,6 +40,10 @@ Port 6665-6669 | IRC | TCP | Not Inherently Vulnerable :
 - While the protocol itself isn't dangerous, an open port can expose your system to various risks like malware, bandwidth consumption, and unauthorized access attempts.
 - Close the port via a firewall, change the port in your BitTorrent client, or consider using a VPN for privacy and security. If you don’t need to use BitTorrent, the best solution would be to simply close or block the port entirely.
 
+Port 6999 | BitTorrent | Unofficial | Vulnerable :
+- Port 6999 does not have an established or default use like other ports. However, it's sometimes used by peer-to-peer (P2P) file-sharing applications, by specific applications or services, and some developers may choose this port for custom software or protocols.
+- Vulnerabilities : Exposure to Custom Applications, Exposure to Custom Applications, Network Exposure.
+- If not need, it’s best to close it using a firewall. If it’s essential, ensure the application is updated, monitor network traffic, and restrict access to only trusted sources.
 
 
 

@@ -1,7 +1,7 @@
 ***
 Format:
 {
-  Port_No | Service Name | Transport Protocol:
+  Port_No | Service Name | Transport Protocol | Is the port vulnerable to attacks(Write Vulnerable / Not Vulnerable):
   - What the port does.....
   - What happens when this port is open(Vulnerability)
   - How to close this port

@@ -75,9 +75,10 @@ Port 10000 | BackupExec | Unofficial | Vulnerable :
 - Vulnerabilities : Unauthorized access, Exploiting vulnerabilities in Webmin, Brute-force attacks, Denial-of-service (DoS).
 - to close this port block the port using a firewall, secure Webmin with strong authentication and encryption, limit access to trusted users, or disable the service entirely if not needed.
 
-
-Non Vulerable ports: 
-- 
+Port 12345 | NetBus | Unofficial | Vulnerable :
+- Port 12345 has historically been used by NetBus, a well-known trojan. The trojan allows a remote attacker to gain control over an infected system, steal data, or perform other malicious activities. Besides NetBus, some legitimate services or applications could use port 12345, but the trojan’s notoriety makes this port a high-risk one to have open.
+- Vulnerabilities : unauthorized access, data theft, and further network infiltration.
+- To secure your system, block the port using a firewall, run a full malware scan, and ensure any software using the port is legitimate and up-to-date.
 
 
 

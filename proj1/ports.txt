@@ -45,6 +45,21 @@ Port 6999 | BitTorrent | Unofficial | Vulnerable :
 - Vulnerabilities : Exposure to Custom Applications, Exposure to Custom Applications, Network Exposure.
 - If not need, it’s best to close it using a firewall. If it’s essential, ensure the application is updated, monitor network traffic, and restrict access to only trusted sources.
 
+Port 6970 | QuickTime | Unofficial | Vulnerable :
+- used by custom or proprietary applications. Supports various types of network communications like remote management, file transfers, or specific network protocols, depending on the system or application.
+- vulnerabilities: Exploitation of unpatched services, Denial-of-service attacks, Unauthorized access.
+- to close this port block the port using a firewall, disable the associated service, or restrict access through network segmentation.
+
+Port 8086 | Kaspersky AV | TCP | Vulnerable :
+- typically used for web-based services like InfluxDB or custom HTTP services.
+- Vulnerability : unauthorized access, potential exploitation of vulnerabilities, and DoS attacks.
+- To close the port block the port using firewalls, restrict access through proper authentication and encryption, or change the port the service uses.
+
+Port 8087 | Kaspersky AV | UDP | Vulnerable :
+- Used for Web-based applications, Alternate HTTP/HTTPS services, and some specific services.
+- Vulnerabilities : Unauthorized Access, Exploiting service vulnerabilities, Denial-of-service (DoS).
+- to close this port block the port with a firewall, disable the associated service, or restrict access to the port through network segmentation or IP whitelisting.
+
 
 
 Non Vulerable ports: 

@@ -60,6 +60,20 @@ Port 8087 | Kaspersky AV | UDP | Vulnerable :
 - Vulnerabilities : Unauthorized Access, Exploiting service vulnerabilities, Denial-of-service (DoS).
 - to close this port block the port with a firewall, disable the associated service, or restrict access to the port through network segmentation or IP whitelisting.
 
+Port 8222 | VMware Server | TCP, UDP | Vulnerable :
+- used by the ActiveMQ broker for communication between clients and servers, particularly for web console or management interfaces.
+- Vulnerabilities : Unauthorized Access to management interfaces, Exploiting service vulnerabilities, Denial-of-service (DoS).
+- To close this port block the port using a firewall, disable or reconfigure the service, limit access to trusted users, and encrypt traffic where necessary.
+
+Port 9100 | PDL | TCP | Vulnerable :
+- used for RAW printing protocol, HP JetDirect, other printers or print servers.
+- Vulnerabilities : Unauthorized printing, Data interception, Access to administrative functions, Denial-of-service (DoS).
+- block the port via a firewall, disable or reconfigure printing services, limit network access to trusted devices, and use more secure printing protocols where possible (like IPP over HTTPS (port 443) or LPD (Line Printer Daemon)).
+
+Port 10000 | BackupExec | Unofficial | Vulnerable :
+- typically associated with the Webmin service and virtualmin. It's often used for system administration tasks such as managing user accounts, configuring web servers, and managing other server settings.
+- Vulnerabilities : Unauthorized access, Exploiting vulnerabilities in Webmin, Brute-force attacks, Denial-of-service (DoS).
+- to close this port block the port using a firewall, secure Webmin with strong authentication and encryption, limit access to trusted users, or disable the service entirely if not needed.
 
 
 Non Vulerable ports: 

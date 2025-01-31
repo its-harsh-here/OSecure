@@ -80,6 +80,18 @@ Port 12345 | NetBus | Unofficial | Vulnerable :
 - Vulnerabilities : unauthorized access, data theft, and further network infiltration.
 - To secure your system, block the port using a firewall, run a full malware scan, and ensure any software using the port is legitimate and up-to-date.
 
+Port 27374 | Sub7 | Unofficial | Vulnerable :
+- Port 27374 is typically used by the Sub 7 trojan. This trojan allows an attacker to Control a victim’s system, Monitor activity, Access files and devices.
+- Vulnerabilities : Remote Control by attackers, Data Theft and privacy violations, System instability and further compromise of the system or network.
+- To mitigate these risks, block the port with a firewall, run a thorough malware scan, remove any detected trojans, and ensure your system is updated and secure, close the port on the router.
+
+Port 31337 | Back Orifice | unofficial | Vulnerable :
+- typically used by the Back Orifice trojan, which provides an attacker with remote access and control over an infected system.
+- Vulnerabilities : Remote Control by attackers, Data Theft and privacy violations, Monitoring and spying, Denial-of-service (DoS) and further infection.
+- To close the port block the port with a firewall, run a malware scan to detect any trojans, and ensure that your software is up-to-date to prevent exploits, close the port on the router.
+
+
+
 
 
 

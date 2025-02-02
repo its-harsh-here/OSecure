@@ -25,6 +25,26 @@ List of ports checked by our code:
 
 <Start writing here>
 
+135|Microsoft EPMAP|TCP,UDP|Vulnerable(RPC DCOM vulnerability)
+-	Facilitates communication between Windows systems for various services, including DCOM (Distributed Component Object Model) and EPMAP (End Point Mapper)
+-	If left open and insecure it is open to vulnerabilities like  "RPC DCOM"  which allows remote attackers to execute arbitrary code on affected systems
+-	We can close tis port using a firewall (windows:go to command prompt then select “block the connection” under Action after specifying the port)
+
+137|NetBIOS-ns|TCP, UDP|Vulnerbale
+-	It is primarily used for NetBIOS Name Service. It allows computers to communicate with each other using names instead of IP addresses
+-	If left vulnerable NBNS traffic can be intercepted and analyzed by attackers, potentially revealing details about the network structure, connected devices, and shared resources.
+-	We can close this port by using iptables(in linux)or using ufw (in ubuntu).In windows we can close it using a firewall
+
+139|NetBIOS-ssn|TCP, UDP|Vulnerable:
+-	It is used for communication between computers using the Server Message Block (SMB) protocol. SMB enables users to access files, printers, and other shared resources on a network.
+-	If left open attackers can exploit Port 139 to gain access to sensitive data(unauthorized access) stored on the server(information leakage).Another risk is the propagation of malwre through infected files.It can also be targeted with DOS and MITM attacks
+-	To close this port we use windows defender firewall(only in windows),iptables for linux(sudo iptables -A INPUT -p tcp --dport 139 -j DROP) and UFW in ubuntu/Debian
+
+143|IMAP4|TCP, UDP| Vulnerable:
+-	IMAP is a email retrieval protocol that operates on port 143.It allows email clients to access and manage email messages stored on a remote server without the need to download them locally This enables users to access their emails from multiple devices 
+-	If left open hackers on the same network (e.g., public Wi-Fi) can intercept emails and passwords using tools like tcpdump.They can also take over email accounts if they get IMAP login credentials.Other attcks also include DOS and RCE.
+-	To close in windows we can use windows firewall.For linux we can use iptables(sudo iptables -A INPUT -p tcp --dport 143 -j DROP)
+
 Port 5900 | RFB/VNC Server | TCP, UDP | Vulnerable :
 - This port  is necessary for VNC functionality, enabling remote control of a computer's desktop environment.
 - If left open without proper security measures it poses significant risks such as Remote Access, Brute Force Attacks, Unencrypted Traffic and Exploiting Weak Configurations

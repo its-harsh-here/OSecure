@@ -12,8 +12,9 @@ Tools Used:
 - Terminal
 
 Future Add-ons:
-1. Write a menu driven code which gives the user a choice to get a description of the open port and how to close it. 
-2. TBD
+1. Write a menu driven code which gives the user a choice to get a list of the open port with a certain vulnerable rating(out of 5). 
+2. Only print out open ports when executed for the first time.
+3. 
 */
 
 #include <stdio.h>

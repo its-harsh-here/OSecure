@@ -9,12 +9,12 @@ Code was written and tested on:
 
 Tools Used: 
 - Nmap
-- Terminal
+- Terminal(gcc)
 
 Future Add-ons:
 1. Write a menu driven code which gives the user a choice to get a list of the open port with a certain vulnerable rating(out of 5). 
 2. Only print out open ports when executed for the first time.
-3. 
+3. Write another menu driven code to fetch data for each port number entered(from port.txt). Give description about the port; why is it vulnerable and how to close it!
 */
 
 #include <stdio.h>

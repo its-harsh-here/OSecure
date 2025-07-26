@@ -1,3 +1,17 @@
+# 🔍 Port Scanner Tool
+
+This tool scans a list of ports from `ports.txt` and checks which ones are open on the provided IP address.
+
+---
+
+## 📦 Project Summary
+
+This command-line tool uses **Nmap** to scan ports listed in a file and returns only those that are open. It's designed for use with a simple terminal command and can be extended for vulnerability management.
+
+---
+
+## ⚙️ Usage: ./main <IP Address>
+
 
 This command will:
 - Read a list of ports from `ports.txt`
@@ -40,9 +54,5 @@ The code was written and tested on the following system:
 
 ---
 
-## 📁 Sample File: `ports.txt`
 
-This file should include a list of port numbers (one per line), and optionally vulnerability ratings or descriptions in a future version.
-
-Example:
 

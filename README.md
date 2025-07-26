@@ -1,49 +1,12 @@
-🔍 Port Scanner Tool
-This tool scans a list of ports from ports.txt and checks which ones are open on the provided IP address.
 
-📦 Project Summary
-This command-line tool uses Nmap to scan ports listed in a file and returns only those that are open. It's designed for use with a simple terminal command and can be extended for vulnerability management.
+---
 
-⚙️ Usage
-Bash Command:  ./main <IP Address>
+## 📌 Note
 
-This command will:
+This tool is for **educational** and **security auditing** purposes. Unauthorized scanning of networks is **prohibited**.
 
-- Read a list of ports from ports.txt
-- Scan each port using Nmap
-- Print the open ports on the specified IP
+---
 
+## 📄 License
 
-🖥️ System Configuration
-The code was written and tested on the following system:
-
-- Operating System: Ubuntu 24.04.1 LTS
-
-- Kernel: Linux 6.8.0-49-generic
- 
-- Architecture: x86-64
-
-🛠️ Tools Used:
-
-- Nmap — for port scanning
-
-- gcc — to compile the code
-
-- Terminal — for executing the script
-
-🚀 Future Add-ons
-✅ Menu-driven Interface:
-Add options for scanning only ports with a vulnerability rating (1–5).
-
-⚠️ One-Time Scan Result:
-Modify the logic to display open ports only the first time the tool is executed.
-
-🔐 Port Vulnerability Info:
-Create another menu-driven interface to:
-
-- Input a port number
-
-- Fetch its description from ports.txt
-
-- Explain its vulnerabilities and suggest ways to secure or close the port
-
+This project is licensed under the [MIT License](LICENSE).

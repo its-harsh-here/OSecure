@@ -52,11 +52,7 @@ The code was written and tested on the following system:
    - Fetch its description from `ports.txt`
    - Explain its vulnerabilities and suggest ways to secure or close the port
 
----
 
-## 👤 Contributor
-
-- [its-harsh-here](https://github.com/its-harsh-here)
 
 
 

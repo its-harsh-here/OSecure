@@ -1,16 +1,49 @@
-Summary: This code checks scans the list of ports in "ports.txt" and returns the ports which are open. 
-An input of user's IP address by running the following command in your terminal: ./main <IP Address>
+🔍 Port Scanner Tool
+This tool scans a list of ports from ports.txt and checks which ones are open on the provided IP address.
 
-Code was written and tested on: 
-- Operating System: Ubuntu 24.04.1 LTS                              
+📦 Project Summary
+This command-line tool uses Nmap to scan ports listed in a file and returns only those that are open. It's designed for use with a simple terminal command and can be extended for vulnerability management.
+
+⚙️ Usage
+Bash Command:  ./main <IP Address>
+
+This command will:
+
+- Read a list of ports from ports.txt
+- Scan each port using Nmap
+- Print the open ports on the specified IP
+
+
+🖥️ System Configuration
+The code was written and tested on the following system:
+
+- Operating System: Ubuntu 24.04.1 LTS
+
 - Kernel: Linux 6.8.0-49-generic
+ 
 - Architecture: x86-64
 
-Tools Used: 
-- Nmap
-- Terminal(gcc)
+🛠️ Tools Used:
 
-Future Add-ons:
-1. Write a menu driven code which gives the user a choice to get a list of the open port with a certain vulnerable rating(out of 5). 
-2. Only print out open ports when executed for the first time.
-3. Write another menu driven code to fetch data for each port number entered(from port.txt). Give description about the port; why is it vulnerable and how to close it!
+- Nmap — for port scanning
+
+- gcc — to compile the code
+
+- Terminal — for executing the script
+
+🚀 Future Add-ons
+✅ Menu-driven Interface:
+Add options for scanning only ports with a vulnerability rating (1–5).
+
+⚠️ One-Time Scan Result:
+Modify the logic to display open ports only the first time the tool is executed.
+
+🔐 Port Vulnerability Info:
+Create another menu-driven interface to:
+
+- Input a port number
+
+- Fetch its description from ports.txt
+
+- Explain its vulnerabilities and suggest ways to secure or close the port
+

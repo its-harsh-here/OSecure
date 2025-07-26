@@ -1,6 +1,6 @@
-# 🔍 Port Scanner Tool
+# 🔍 OSecure
 
-This tool scans a list of ports from `ports.txt` and checks which ones are open on the provided IP address.
+This code scans a list of ports from `ports.txt` and checks which ones are open on the provided IP address.
 
 ---
 

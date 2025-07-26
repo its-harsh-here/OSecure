@@ -97,7 +97,7 @@ struct port p[] = {
                     {27374, "Sub7 (Trojan)", "TCP"}, 
                     {31337, "Back Orifice (Trojan)", "TCP"}
 
-                }; 
+}; 
 
 
 int main(int argc, char *argv[])

@@ -23,13 +23,14 @@ Future Add-ons:
 
 #define SIZE 1000
 
+void pline(int n);
 void runcmd(char *, char *, int);
 int test(char* result);
 
 struct port 
 {
     int num;
-    char name[10];
+    char name[30];
     char protocol[20];
 };
 
@@ -112,8 +113,13 @@ int main(int argc, char *argv[])
     int pc = 0;
     char *ip = argv[1]; 
     char result[SIZE] = "";
-    printf("\n\t     ***Scanning for Open Ports***\n\n");
-    printf("Port Number | Service Name | Transport Protocol | Status\n");
+    printf("\n\t\t\t     ***Scanning for Open Ports***\n");
+    char s_n[] = "Service Name", t_p[] = "Transport Protocol";
+    for(int i = 0; i < 80; i++)
+        printf("_");
+    printf("\n");
+    printf("| Port Number | %30s | %20s | Status \t|\n", s_n, t_p);
+    pline(80);
     for(int i = 0, t = sizeof(p) / sizeof(struct port); i < t; i++)
     {
         char cmd[100];  
@@ -122,14 +128,15 @@ int main(int argc, char *argv[])
         if(test(result))
         {
             op[pc] = p[i];
-            printf("%11d | %12s | %18s | open\n", p[i].num, p[i].name, p[i].protocol);
+            printf("|%12d | %30s | %20s | open\t|\n", p[i].num, p[i].name, p[i].protocol);
             pc++;            
         }
         else
-            printf("%11d | %12s | %18s | close\n", p[i].num, p[i].name, p[i].protocol);
+            printf("|%12d | %30s | %20s | close\t|\n", p[i].num, p[i].name, p[i].protocol);
 
         (result, 0, SIZE);
     }
+    pline(80);
     printf("\nTotal Number of Open Ports: %d\n\n", pc);
     int f;
     do
@@ -139,9 +146,11 @@ int main(int argc, char *argv[])
     } while (f < 1 || f > 2);
     if (f == 1 && pc > 0)
     {
-        printf("\nPort Number | Service Name | Transport Protocol | Status\n");
+        printf("| Port Number | %30s | %20s | Status \t|\n", s_n, t_p);
+        pline(80);
         for(int i = 0, t = pc; i < t; i++)
-            printf("%11d | %12s | %18s | open\n", op[i].num, op[i].name, op[i].protocol);
+            printf("|%12d | %30s | %20s | open\t|\n", op[i].num, op[i].name, op[i].protocol);
+        pline(80);
     }
     else if (f == 1)
         printf("\nNo Open Ports!\n");
@@ -149,6 +158,15 @@ int main(int argc, char *argv[])
         printf("\nQuiting!\n");
     printf("\n");
     return 0;
+}
+
+void pline(int n)
+{
+    printf("|");
+    for(int i = 1; i < 80; i++)
+        printf("_");
+    printf("|\n");
+    return;
 }
 
 void runcmd(char* F, char* output, int s)

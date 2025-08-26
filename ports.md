@@ -1,11 +1,11 @@
-Port_No | Service Name              | Transport Protocol | Is the port vulnerable     | Vulnerability Rating (/5)
+Port_No | Service Name              | Transport Protocol | Vulnerability Rating (/5)
 --------------------------------------------------------------------------------------------------------------
-135     | Microsoft EPMAP           | TCP/UDP            | Vulnerable (RPC DCOM)       | 5/5
+135     | Microsoft EPMAP           | TCP/UDP            | 5/5
 - Facilitates communication between Windows services via RPC and DCOM.
 - Exposes RPC DCOM buffer‑overflow bugs (e.g. MS03‑026), exploited by Blaster worm to run code remotely. :contentReference[oaicite:1]{index=1}
 - Mitigation: apply Microsoft patches, disable RPC/DCOM if unused, and block port 135 via firewall or Windows Defender. :contentReference[oaicite:2]{index=2}
 
-20      | FTP‑Data                  | TCP                | Vulnerable (plain‑text FTP) | 4/5
+20      | FTP‑Data                  | TCP                | 4/5
 - Used for FTP data transfer in active mode.
 - Transmits credentials and data in clear‑text; vulnerable to MITM, brute‑force, directory traversal, bounce attacks. :contentReference[oaicite:3]{index=3}
 - Mitigation: disable FTP service if unused, block port 20 via firewall, use SFTP or FTPS instead. :contentReference[oaicite:4]{index=4}

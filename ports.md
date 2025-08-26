@@ -10,71 +10,71 @@ Port_No | Service Name              | Transport Protocol | Vulnerability Rating 
 - Transmits credentials and data in clear‑text; vulnerable to MITM, brute‑force, directory traversal, bounce attacks. :contentReference[oaicite:3]{index=3}
 - Mitigation: disable FTP service if unused, block port 20 via firewall, use SFTP or FTPS instead. :contentReference[oaicite:4]{index=4}
 
-21      | FTP                       | TCP                | Vulnerable (plain‑text FTP) | 4/5
+21      | FTP                       | TCP                | 4/5
 - Standard FTP control port for sending commands.
 - Same risks as port 20: clear‑text credentials, brute‑force, directory traversal, FTP‑bounce. :contentReference[oaicite:5]{index=5}
 - Mitigation: block or disable FTP‑control, enforce secure FTP alternatives. :contentReference[oaicite:6]{index=6}
 
-22      | SSH                       | TCP                | Vulnerable if misconfigured  | 3/5
+22      | SSH                       | TCP                | 3/5
 - Secure Shell for encrypted remote login.
 - Potential brute‑force login, weak credentials, outdated implementations. :contentReference[oaicite:7]{index=7}
 - Mitigation: use key‑based authentication, disable password login, update OpenSSH, deploy fail2ban/rate limits.
 
-23      | Telnet                    | TCP                | Vulnerable (plain‑text)      | 5/5
+23      | Telnet                    | TCP                | 5/5
 - Remote unencrypted shell access.
 - Sends all data including credentials in plain text; trivial sniffing and hijacking. :contentReference[oaicite:8]{index=8}
 - Mitigation: disable Telnet, use SSH; block port 23 via firewall.
 
-25      | SMTP                      | TCP                | Vulnerable (spam & spoofing) | 3/5
+25      | SMTP                      | TCP                | 3/5
 - Simple Mail Transfer Protocol for sending email.
 - Open relays, spoofing, spam abuse if misconfigured. :contentReference[oaicite:9]{index=9}
 - Mitigation: configure SMTP securely, enforce authentication, use TLS, block or restrict port 25 access.
 
-53      | DNS                       | TCP/UDP            | Vulnerable (amplification)   | 4/5
+53      | DNS                       | TCP/UDP            | 4/5
 - Domain Name System for queries and zone transfers.
 - Can be abused in reflection/amplification DDoS attacks. :contentReference[oaicite:10]{index=10}
 - Mitigation: restrict zone transfers, rate-limit queries, firewall port 53.
 
-69      | TFTP                      | UDP                | Vulnerable (no auth)         | 3/5
+69      | TFTP                      | UDP                | 3/5
 - Trivial File Transfer Protocol (used for boot, firmware).
 - No authentication or encryption; vulnerable to unauthorized read/write, DoS. (General known issue)
 - Mitigation: disable TFTP service, restrict with ACLs or firewall port 69.
 
-80      | HTTP                      | TCP                | Vulnerable (app-level)       | 4/5
+80      | HTTP                      | TCP                | 4/5
 - Unencrypted web traffic.
 - Prone to XSS, SQLi, CSRF, DDoS if web app is weak. :contentReference[oaicite:11]{index=11}
 - Mitigation: disable if unused; otherwise enforce HTTPS, secure web app, patch server, use WAF.
 
-110     | POP3                      | TCP                | Vulnerable (plain‑text)      | 3/5
+110     | POP3                      | TCP                | 3/5
 - Post Office Protocol v3 for email retrieval.
 - Sends credentials in plain text; vulnerable to MITM and credential theft. :contentReference[oaicite:12]{index=12}
 - Mitigation: disable POP3 if unused, enable POP3S (SSL/TLS), block port 110.
 
-135     | Microsoft EPMAP           | TCP/UDP            | Vulnerable (RPC DCOM vuln.)  | 5/5
+135     | Microsoft EPMAP           | TCP/UDP            | 5/5
 - Facilitates RPC/DCOM service location on Windows.
 - Buffer‐overflow vulnerabilities allow remote code execution (e.g. Blaster worm). :contentReference[oaicite:13]{index=13}
 - Mitigation: apply Windows patches, disable RPC/DCOM if not used, block port via firewall. :contentReference[oaicite:14]{index=14}
-137     | NetBIOS Name Service        | UDP/TCP            | Vulnerable (information disclosure, enumeration)       | 4/5
+137     | NetBIOS Name Service        | UDP/TCP            | 4/5
 - Provides NetBIOS name registration and resolution on Windows networks. :contentReference[oaicite:1]{index=1}  
 - Vulnerabilities: attackers can use NBNS spoofing/enumeration (nbtscan, NBSTAT) to map hostnames, domains, shares; risk of NetBIOS botnets and malware. :contentReference[oaicite:2]{index=2}  
 - Mitigation: disable NetBIOS if unused, block UDP/TCP port 137 via firewall (Windows Firewall rule: block UDP/TCP port 137). :contentReference[oaicite:3]{index=3}  
 
-139     | NetBIOS Session Service     | TCP (sometimes UDP) | Vulnerable (SMB session exploitation, DoS)               | 5/5
+139     | NetBIOS Session Service     | TCP (sometimes UDP) | 5/5
 - Handles session establishment for SMB file/printer sharing over NetBIOS. :contentReference[oaicite:4]{index=4}  
 - Vulnerabilities: exploited by malware (WannaCry via SMBv1, Sasser worm), NetBIOS session DoS (WinNuke), unauthorized access, SMB relay attacks. :contentReference[oaicite:5]{index=5}  
 - Mitigation: disable SMBv1/NetBIOS over TCP/IP, block port 139 via firewall and restrict access to trusted internal systems only. :contentReference[oaicite:6]{index=6}  
 
-143     | IMAP                        | TCP                | Vulnerable (brute-force, cleartext credentials)         | 3/5
+143     | IMAP                        | TCP                | 3/5
 - IMAP (Internet Message Access Protocol) allows email clients to access mail on a server in real time.
 - Vulnerable to brute-force login attempts, and if not configured with SSL/TLS, credentials are sent in cleartext.
 - Close by disabling IMAP on the server or allowing only secure IMAPS (port 993). Use firewall to block port 143.
 
-381     | HP OpenView Network Node Manager | TCP           | Vulnerable (unauthenticated access)                    | 2/5
+381     | HP OpenView Network Node Manager | TCP           | 2/5
 - Used for HP OpenView network management.
 - Older versions had vulnerabilities allowing remote attackers to execute arbitrary commands.
 - Close via firewall unless using HP OpenView; otherwise, update to latest secure version.
 
-383     | HP OpenView Network Node Manager | TCP           | Vulnerable (remote execution, weak auth)               | 2/5
+383     | HP OpenView Network Node Manager | TCP           | 2/5
 - Companion port to 381, often used by HP OpenView agents.
 - Vulnerable to remote execution via crafted packets.
 - Close with firewall rules or disable unnecessary HP services.
